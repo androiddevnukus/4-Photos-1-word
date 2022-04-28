@@ -76,6 +76,7 @@
         app:layout_constraintTop_toBottomOf="@id/action_barr">
 
         <TextView
+            android:id="@+id/tv_level_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1"
@@ -114,6 +115,7 @@
                     android:gravity="center">
 
                     <ImageView
+                        android:id="@+id/iv_one"
                         android:layout_width="164dp"
                         android:layout_height="164dp"
                         android:padding="4dp"
@@ -129,6 +131,7 @@
                     android:background="@drawable/oulined_style">
 
                     <ImageView
+                        android:id="@+id/iv_two"
                         android:layout_width="164dp"
                         android:layout_height="164dp"
                         android:padding="4dp"
@@ -148,6 +151,7 @@
                     android:background="@drawable/oulined_style">
 
                     <ImageView
+                        android:id="@+id/iv_three"
                         android:layout_width="164dp"
                         android:layout_height="164dp"
                         android:padding="4dp"
@@ -163,6 +167,7 @@
                     android:background="@drawable/oulined_style">
 
                     <ImageView
+                        android:id="@+id/iv_four"
                         android:layout_width="164dp"
                         android:layout_height="164dp"
                         android:padding="4dp"
@@ -171,7 +176,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
 
         <LinearLayout
             android:id="@+id/container_of_answers"
@@ -183,36 +187,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/container_of_images">
 
-
             <TextView
-                style="@style/answers_box"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Q" />
-
-            <TextView
-                style="@style/answers_box"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Q" />
-
-            <TextView
-                style="@style/answers_box"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Q" />
-
-            <TextView
-                style="@style/answers_box"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Q" />
-
-            <TextView
-                style="@style/answers_box"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Q" />
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/shape_card_outline"
+                android:text="A"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="32dp"
+                android:gravity="center" />
 
         </LinearLayout>
 
@@ -228,90 +211,115 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:weightSum="6">
 
                 <TextView
+                    android:id="@+id/option_letter_one"
                     style="@style/letters_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Q" />
 
                 <TextView
+                    android:id="@+id/option_letter_two"
                     style="@style/letters_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Q" />
 
                 <TextView
+                    android:id="@+id/option_letter_three"
                     style="@style/letters_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Q" />
 
                 <TextView
+                    android:id="@+id/option_letter_four"
                     style="@style/letters_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Q" />
 
                 <TextView
+                    android:id="@+id/option_letter_five"
                     style="@style/letters_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Q" />
 
                 <TextView
+                    android:id="@+id/option_letter_six"
                     style="@style/letters_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Q" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp">
+                android:layout_marginTop="6dp"
+                android:weightSum="6">
 
                 <TextView
+                    android:id="@+id/option_letter_seven"
                     style="@style/letters_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Q" />
 
                 <TextView
+                    android:id="@+id/option_letter_eight"
                     style="@style/letters_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Q" />
 
                 <TextView
+                    android:id="@+id/option_letter_nine"
                     style="@style/letters_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Q" />
 
                 <TextView
+                    android:id="@+id/option_letter_ten"
                     style="@style/letters_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Q" />
 
                 <TextView
+                    android:id="@+id/option_letter_eleven"
                     style="@style/letters_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Q" />
 
                 <TextView
+                    android:id="@+id/option_letter_twelve"
                     style="@style/letters_style"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Q" />
             </LinearLayout>
 
         </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,13 +10,24 @@
         <entry key="..\:/Users/Rasul/AndroidStudioProjects/4Photos1word/app/src/main/res/drawable/rounded_shape.xml" value="0.248" />
         <entry key="..\:/Users/Rasul/AndroidStudioProjects/4Photos1word/app/src/main/res/layout/activity_game.xml" value="0.33" />
         <entry key="..\:/Users/Rasul/AndroidStudioProjects/4Photos1word/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/4-Photos-1-word/app/src/main/res/drawable/oulined_style.xml" value="0.1605" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/4-Photos-1-word/app/src/main/res/drawable/shape_card_outline.xml" value="0.1605" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/4-Photos-1-word/app/src/main/res/layout/activity_game.xml" value="0.5" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/4-Photos-1-word/app/src/main/res/layout/activity_main.xml" value="0.209375" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16_PREVIEW" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.5" />
+      </ProjectState>
+    </option>
   </component>
 </project>

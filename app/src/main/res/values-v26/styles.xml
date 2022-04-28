@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="answers_box">
+    <style name="answers_box" parent="@android:style/Widget.TextView">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:gravity">center</item>
@@ -12,7 +12,7 @@
         <item name="android:background">#010313</item>
     </style>
 
-    <style name="letters_style">
+    <style name="letters_style" parent="@android:style/Widget.TextView">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#010313</item>
         <item name="android:gravity">center</item>
