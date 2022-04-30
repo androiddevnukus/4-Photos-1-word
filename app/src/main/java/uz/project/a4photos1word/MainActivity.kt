@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             val intent = Intent(this,GameActivity::class.java)
             startActivity(intent)
-            finish()
         }
     }
 }
