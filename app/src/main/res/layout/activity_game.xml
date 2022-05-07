@@ -178,122 +178,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/container_of_answers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@id/letters"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/container_of_images">
-
-            <TextView
-                android:id="@+id/tv_answer_1"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="1dp"
-                android:background="@drawable/shape_card_answer"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="32dp"
-                android:textStyle="bold"
-                android:visibility="gone"
-                tools:ignore="SpUsage" />
-
-            <TextView
-                android:id="@+id/tv_answer_2"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="1dp"
-                android:background="@drawable/shape_card_answer"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="32dp"
-                android:textStyle="bold"
-                android:visibility="gone"
-                tools:ignore="SpUsage" />
-
-            <TextView
-                android:id="@+id/tv_answer_3"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="1dp"
-                android:background="@drawable/shape_card_answer"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="32dp"
-                android:textStyle="bold"
-                android:visibility="gone"
-                tools:ignore="SpUsage" />
-
-            <TextView
-                android:id="@+id/tv_answer_4"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="1dp"
-                android:background="@drawable/shape_card_answer"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="32dp"
-                android:textStyle="bold"
-                android:visibility="gone"
-                tools:ignore="SpUsage" />
-
-            <TextView
-                android:id="@+id/tv_answer_5"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="1dp"
-                android:background="@drawable/shape_card_answer"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="32dp"
-                android:textStyle="bold"
-                android:visibility="gone"
-                tools:ignore="SpUsage" />
-
-            <TextView
-                android:id="@+id/tv_answer_6"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="1dp"
-                android:background="@drawable/shape_card_answer"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="32dp"
-                android:textStyle="bold"
-                android:visibility="gone"
-                tools:ignore="SpUsage" />
-
-            <TextView
-                android:id="@+id/tv_answer_7"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="1dp"
-                android:background="@drawable/shape_card_answer"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="32dp"
-                android:textStyle="bold"
-                android:visibility="gone"
-                tools:ignore="SpUsage" />
-
-            <TextView
-                android:id="@+id/tv_answer_8"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="1dp"
-                android:background="@drawable/shape_card_answer"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="32dp"
-                android:textStyle="bold"
-                android:visibility="gone"
-                tools:ignore="SpUsage" />
-
-        </LinearLayout>
-
-        <LinearLayout
             android:id="@+id/letters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -462,6 +346,164 @@
 
         </LinearLayout>
 
+        <View
+            android:id="@+id/view_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#CD000000" />
+
+        <ImageView
+            android:id="@+id/iv_shine"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:layout_marginBottom="32dp"
+            android:src="@drawable/success_ray_blue"
+            app:layout_constraintBottom_toBottomOf="@id/container_of_answers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/container_of_answers" />
+
+        <LinearLayout
+            android:id="@+id/container_of_answers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/letters"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_of_images">
+
+            <TextView
+                android:id="@+id/tv_answer_1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_answer"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="32dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_answer_2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_answer"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="32dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_answer_3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_answer"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="32dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_answer_4"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_answer"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="32dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_answer_5"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_answer"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="32dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_answer_6"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_answer"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="32dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_answer_7"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_answer"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="32dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/tv_answer_8"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="1dp"
+                android:background="@drawable/shape_card_answer"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="32dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:ignore="SpUsage" />
+
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="96dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/play_btn_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.15"
+        android:text="@string/text_next"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_next"
+        app:layout_constraintEnd_toEndOf="@id/btn_next"
+        app:layout_constraintStart_toStartOf="@id/btn_next"
+        app:layout_constraintTop_toTopOf="@id/btn_next"
+        tools:ignore="SpUsage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

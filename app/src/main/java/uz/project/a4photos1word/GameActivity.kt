@@ -1,6 +1,8 @@
 package uz.project.a4photos1word
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -16,8 +18,10 @@ class GameActivity : AppCompatActivity() {
     private val questions = Constants.getQuestions()
     private lateinit var currentQuestion: Question
     private var index = -1
+    private var countCycle = 0
 
     private var answersList = mutableListOf<TextView>()
+    private var optionsList = mutableListOf<TextView>()
     private var userAnswer = mutableListOf<Pair<String, TextView>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +38,7 @@ class GameActivity : AppCompatActivity() {
                 finish()
             }
             fillAnswersList()
+            fillOptionsList()
 
             tvOption1.setOnClickListener { setLetter(tvOption1) }
             tvOption2.setOnClickListener { setLetter(tvOption2) }
@@ -57,22 +62,42 @@ class GameActivity : AppCompatActivity() {
             tvAnswer7.setOnClickListener { removeLetter(tvAnswer7) }
             tvAnswer8.setOnClickListener { removeLetter(tvAnswer8) }
 
+            btnNext.setOnClickListener {
+                if (++index < questions.size) {
+                    currentQuestion = questions[index]
+                } else {
+                    index = 0
+                    countCycle++
+                    currentQuestion = questions[index]
+                }
+                setQuestion()
+            }
+
             setQuestion()
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setQuestion() {
         binding.apply {
-            tvLevelNumber.text = currentQuestion.id.toString()
+            userAnswer.clear()
+            setCongratsView(false)
+
+            tvLevelNumber.text = (currentQuestion.id + countCycle * questions.size).toString()
 
             ivOne.setImageResource(currentQuestion.images[0])
             ivTwo.setImageResource(currentQuestion.images[1])
             ivThree.setImageResource(currentQuestion.images[2])
             ivFour.setImageResource(currentQuestion.images[3])
 
-            // TODO: should be changed
             repeat(currentQuestion.answer.length) {
                 answersList[it].isVisible = true
+                answersList[it].text = ""
+            }
+
+            repeat(8 - currentQuestion.answer.length) {
+                answersList[it + currentQuestion.answer.length].isVisible = false
+                answersList[it + currentQuestion.answer.length].text = ""
             }
 
             setOptionLetters()
@@ -117,6 +142,23 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
+    private fun fillOptionsList() {
+        binding.apply {
+            optionsList.add(tvOption1)
+            optionsList.add(tvOption2)
+            optionsList.add(tvOption3)
+            optionsList.add(tvOption4)
+            optionsList.add(tvOption5)
+            optionsList.add(tvOption6)
+            optionsList.add(tvOption7)
+            optionsList.add(tvOption8)
+            optionsList.add(tvOption9)
+            optionsList.add(tvOption10)
+            optionsList.add(tvOption11)
+            optionsList.add(tvOption12)
+        }
+    }
+
     private fun setLetter(textView: TextView) {
         val letter = textView.text.toString()
         if (letter.isNotEmpty() && userAnswer.filter { it.first != "" }.size != currentQuestion.answer.length) {
@@ -137,7 +179,7 @@ class GameActivity : AppCompatActivity() {
                 answer += it.first
             }
             if (answer == currentQuestion.answer) {
-                Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show()
+                setCongratsView(true)
             } else {
                 Toast.makeText(this, "Incorrect!", Toast.LENGTH_SHORT).show()
             }
@@ -154,6 +196,26 @@ class GameActivity : AppCompatActivity() {
 
             // logic
             userAnswer[index] = Pair("", binding.tvAnswer1)
+        }
+    }
+
+    private fun setCongratsView(success: Boolean) {
+        binding.apply {
+            viewOverlay.isVisible = success
+            ivShine.isVisible = success
+            val rotateAnimation =
+                AnimationUtils.loadAnimation(this@GameActivity, R.anim.rotate_view)
+            ivShine.startAnimation(rotateAnimation)
+            if (!success) ivShine.clearAnimation()
+            btnNext.isVisible = success
+            tvNext.isVisible = success
+
+            answersList.forEach { tvAnswer ->
+                tvAnswer.isEnabled = !success
+            }
+            optionsList.forEach { tvOption ->
+                tvOption.isEnabled = !success
+            }
         }
     }
 }
