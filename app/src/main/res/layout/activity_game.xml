@@ -111,7 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
                     android:layout_marginBottom="4dp"
-                    android:background="@drawable/oulined_style"
+                    android:background="@drawable/outlined_style"
                     android:gravity="center">
 
                     <ImageView
@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_marginBottom="4dp"
-                    android:background="@drawable/oulined_style">
+                    android:background="@drawable/outlined_style">
 
                     <ImageView
                         android:id="@+id/iv_two"
@@ -148,7 +148,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="4dp"
-                    android:background="@drawable/oulined_style">
+                    android:background="@drawable/outlined_style">
 
                     <ImageView
                         android:id="@+id/iv_three"
@@ -164,7 +164,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="4dp"
-                    android:background="@drawable/oulined_style">
+                    android:background="@drawable/outlined_style">
 
                     <ImageView
                         android:id="@+id/iv_four"

@@ -83,10 +83,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="4dp"
-                android:background="@drawable/oulined_style"
+                android:background="@drawable/outlined_style"
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/iv_image_1"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:padding="4dp"
@@ -98,9 +99,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginBottom="4dp"
-                android:background="@drawable/oulined_style">
+                android:background="@drawable/outlined_style">
 
                 <ImageView
+                    android:id="@+id/iv_image_2"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:padding="4dp"
@@ -119,9 +121,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="4dp"
-                android:background="@drawable/oulined_style">
+                android:background="@drawable/outlined_style">
 
                 <ImageView
+                    android:id="@+id/iv_image_3"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:padding="4dp"
@@ -133,14 +136,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
-                android:background="@drawable/oulined_style">
+                android:background="@drawable/outlined_style">
 
                 <ImageView
+                    android:id="@+id/iv_image_4"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:padding="4dp"
                     android:src="@drawable/ic_launcher_background" />
             </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
@@ -157,6 +162,7 @@
         app:layout_constraintTop_toTopOf="@id/container_of_images">
 
         <TextView
+            android:id="@+id/tv_level_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1"
@@ -169,13 +175,13 @@
         android:id="@+id/play_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Play"
-        android:textSize="26sp"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/counter_tv"
-        android:gravity="center"
         android:layout_marginHorizontal="80dp"
-        android:background="@drawable/play_btn_bg"/>
+        android:layout_marginTop="16dp"
+        android:background="@drawable/play_btn_bg"
+        android:gravity="center"
+        android:text="Play"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintTop_toBottomOf="@id/counter_tv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

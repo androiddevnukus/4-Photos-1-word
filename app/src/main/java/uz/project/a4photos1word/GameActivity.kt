@@ -1,6 +1,8 @@
 package uz.project.a4photos1word
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import android.widget.TextView
@@ -15,8 +17,9 @@ import kotlin.random.Random
 
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
-    private val questions = Constants.getQuestions()
+    private lateinit var questions: List<Question>
     private lateinit var currentQuestion: Question
+    private lateinit var sharedPreferences: SharedPreferences
     private var index = -1
     private var countCycle = 0
 
@@ -24,14 +27,19 @@ class GameActivity : AppCompatActivity() {
     private var optionsList = mutableListOf<TextView>()
     private var userAnswer = mutableListOf<Pair<String, TextView>>()
 
+    companion object {
+        const val LEVEL_INDEX = "levelIndex"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (questions.isNotEmpty()) {
-            currentQuestion = questions[++index]
-        }
+        sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
+        index = sharedPreferences.getInt(LEVEL_INDEX, 0)
+        questions = Constants.getQuestions()
+        currentQuestion = questions[index]
 
         binding.apply {
             btnBack.setOnClickListener {
@@ -72,9 +80,9 @@ class GameActivity : AppCompatActivity() {
                 }
                 setQuestion()
             }
-
-            setQuestion()
         }
+
+        setQuestion()
     }
 
     @SuppressLint("SetTextI18n")
@@ -99,6 +107,8 @@ class GameActivity : AppCompatActivity() {
                 answersList[it + currentQuestion.answer.length].isVisible = false
                 answersList[it + currentQuestion.answer.length].text = ""
             }
+
+            sharedPreferences.edit().putInt(LEVEL_INDEX, index).apply()
 
             setOptionLetters()
         }
