@@ -92,90 +92,77 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/action_barr">
 
-        <LinearLayout
-            android:id="@+id/container_of_images"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_images"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/iv_one"
+            android:layout_width="164dp"
+            android:layout_height="164dp"
+            android:layout_marginTop="48dp"
+            android:padding="4dp"
+            android:background="@drawable/outlined_style"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="@id/guideline_images"
+            app:layout_constraintHorizontal_bias="0.97"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_two"
+            android:layout_width="164dp"
+            android:layout_height="164dp"
+            android:layout_marginTop="48dp"
+            android:padding="4dp"
+            android:background="@drawable/outlined_style"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline_images"
+            app:layout_constraintHorizontal_bias="0.03"/>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:background="@drawable/outlined_style"
-                    android:gravity="center">
+        <ImageView
+            android:id="@+id/iv_three"
+            android:layout_width="164dp"
+            android:layout_height="164dp"
+            android:layout_marginTop="3dp"
+            android:padding="4dp"
+            android:background="@drawable/outlined_style"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintTop_toBottomOf="@id/iv_one"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_images"
+            app:layout_constraintHorizontal_bias="0.97" />
 
-                    <ImageView
-                        android:id="@+id/iv_one"
-                        android:layout_width="164dp"
-                        android:layout_height="164dp"
-                        android:padding="4dp"
-                        android:src="@drawable/ic_launcher_background" />
-                </LinearLayout>
+        <ImageView
+            android:id="@+id/iv_four"
+            android:layout_width="164dp"
+            android:layout_height="164dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/outlined_style"
+            android:src="@drawable/photo1_4"
+            app:layout_constraintTop_toBottomOf="@id/iv_two"
+            app:layout_constraintStart_toStartOf="@id/guideline_images"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.03"
+            android:padding="4dp" />
 
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:background="@drawable/outlined_style">
-
-                    <ImageView
-                        android:id="@+id/iv_two"
-                        android:layout_width="164dp"
-                        android:layout_height="164dp"
-                        android:padding="4dp"
-                        android:src="@drawable/ic_launcher_background" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="4dp"
-                    android:background="@drawable/outlined_style">
-
-                    <ImageView
-                        android:id="@+id/iv_three"
-                        android:layout_width="164dp"
-                        android:layout_height="164dp"
-                        android:padding="4dp"
-                        android:src="@drawable/ic_launcher_background" />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="4dp"
-                    android:background="@drawable/outlined_style">
-
-                    <ImageView
-                        android:id="@+id/iv_four"
-                        android:layout_width="164dp"
-                        android:layout_height="164dp"
-                        android:padding="4dp"
-                        android:src="@drawable/ic_launcher_background" />
-                </LinearLayout>
-            </LinearLayout>
-
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/iv_four_big"
+            android:layout_width="327dp"
+            android:layout_height="327dp"
+            android:background="@drawable/outlined_style"
+            android:src="@drawable/photo1_4"
+            android:padding="4dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/iv_one"
+            app:layout_constraintStart_toStartOf="@id/iv_one"
+            app:layout_constraintEnd_toEndOf="@id/iv_four"
+            app:layout_constraintBottom_toBottomOf="@id/iv_four" />
 
         <LinearLayout
             android:id="@+id/letters"
@@ -371,7 +358,7 @@
             app:layout_constraintBottom_toTopOf="@id/letters"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/container_of_images">
+            app:layout_constraintTop_toBottomOf="@id/iv_four">
 
             <TextView
                 android:id="@+id/tv_answer_1"

@@ -4,13 +4,16 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.Pair
 import androidx.core.view.isVisible
 import uz.project.a4photos1word.core.Constants
+import uz.project.a4photos1word.core.dp
 import uz.project.a4photos1word.data.Question
 import uz.project.a4photos1word.databinding.ActivityGameBinding
 import kotlin.random.Random
@@ -25,6 +28,8 @@ class GameActivity : AppCompatActivity() {
 
     private var answersList = mutableListOf<TextView>()
     private var optionsList = mutableListOf<TextView>()
+    private var imagesList = mutableListOf<ImageView>()
+    private val imagesZoom = mutableListOf(false, false, false, false)
     private var userAnswer = mutableListOf<Pair<String, TextView>>()
 
     companion object {
@@ -47,6 +52,14 @@ class GameActivity : AppCompatActivity() {
             }
             fillAnswersList()
             fillOptionsList()
+            fillImagesList()
+
+            ivOne.setOnClickListener {
+                scaleIt(0)
+            }
+            ivFour.setOnClickListener {
+                scaleIt(3)
+            }
 
             tvOption1.setOnClickListener { setLetter(tvOption1) }
             tvOption2.setOnClickListener { setLetter(tvOption2) }
@@ -97,6 +110,8 @@ class GameActivity : AppCompatActivity() {
             ivTwo.setImageResource(currentQuestion.images[1])
             ivThree.setImageResource(currentQuestion.images[2])
             ivFour.setImageResource(currentQuestion.images[3])
+
+            ivFourBig.setImageResource(currentQuestion.images[3])
 
             repeat(currentQuestion.answer.length) {
                 answersList[it].isVisible = true
@@ -169,6 +184,15 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
+    private fun fillImagesList() {
+        binding.apply {
+            imagesList.add(ivOne)
+            imagesList.add(ivTwo)
+            imagesList.add(ivThree)
+            imagesList.add(ivFour)
+        }
+    }
+
     private fun setLetter(textView: TextView) {
         val letter = textView.text.toString()
         if (letter.isNotEmpty() && userAnswer.filter { it.first != "" }.size != currentQuestion.answer.length) {
@@ -226,6 +250,58 @@ class GameActivity : AppCompatActivity() {
             optionsList.forEach { tvOption ->
                 tvOption.isEnabled = !success
             }
+        }
+    }
+
+    private fun scaleIt(index: Int) {
+        val zoomOut = AnimationUtils.loadAnimation(
+            this,
+            when (index) {
+                0 -> R.anim.zoom_out_1
+                else -> R.anim.zoom_out_4
+            }
+        )
+
+        binding.apply {
+            val image = imagesList[index]
+            val zoom = imagesZoom[index]
+
+            if (zoom) {
+                image.startAnimation(zoomOut)
+            } else {
+                zoomIn(index)
+            }
+        }
+    }
+
+    private fun zoomIn(index: Int) {
+        val image = imagesList[index]
+        val zoom = imagesZoom[index]
+        val zoomIn = AnimationUtils.loadAnimation(
+            this,
+            when (index) {
+                0 -> R.anim.zoom_in_1
+                else -> R.anim.zoom_in_4
+            }
+        )
+
+        image.startAnimation(zoomIn)
+
+        binding.apply {
+            zoomIn.setAnimationListener(object : Animation.AnimationListener {
+                override fun onAnimationStart(p0: Animation?) {
+                    image.elevation = 1.dp
+                }
+
+                override fun onAnimationEnd(p0: Animation?) {
+                    imagesZoom[index] = !zoom
+                    image.elevation = 0.dp
+                    ivFourBig.isVisible = true
+                    ivFourBig.elevation = 1.dp
+                }
+
+                override fun onAnimationRepeat(p0: Animation?) {}
+            })
         }
     }
 }
